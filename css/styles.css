@@ -1,42 +1,482 @@
 /* Global Variables */
 
 :root {
-  --color-primary: #ffdd36;
-  --border-size: 2px;
-  --border-radius: 10px;
+  --link-colour-primary: #000;
+  --link-colour-hover: #1e90ff;
+  --animation-delay: 3s;
 }
 
 html {
-  /* 62.5% of 16 px = 10 px */
-  font-size: 62.5%;
+  /* 62.5% of 16 px = 10 px 
+  font-size: 62.5%; */
 }
 
 body {
-  margin: 10px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   /* 1 rem = 1 x font size of root element (html is the root element) */
   font-size: 2rem;
 }
 
-.one {
-  background: var(--color-primary);
+/* ICON CSS */
+
+i {
+  font-size: 3rem;
+  padding: 0px 25px;
+  color: var(--link-colour-primary);
 }
 
-.two {
-  background: var(--color-primary);
+i:hover {
+  color: var(--link-colour-hover);
 }
 
-.btn {
-  border: 0;
-  border-radius: 30px;
-  padding: 1rem 2rem;
+.rotated {
+  transform: rotate(90deg);
 }
 
-.btn-primary {
-  background: gold;
+/* HOME PAGE FOOTER */
+
+#home-page-footer {
+  position: fixed;
+  bottom: 5%;
+  width: 100%;
+  padding: 20px;
+  margin: auto;
+  text-align: center;
 }
 
-.btn-secondary {
-  background: dodgerblue;
+#home-page-footer button {
+  border: none;
+  background: none;
+}
+
+/* TOOLTIPS */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* HAMBURGER MENU */
+
+.hamburger,
+.close {
+  z-index: 999;
+  cursor: pointer;
+  /* position absolute position the icons relative to the body because they have no position relative parents*/
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+.close {
+  background: white;
+}
+
+.navbar {
+  position: fixed;
+  /* a higher z-index put navbar above hamburger */
+  z-index: 1000;
+  top: 0px;
+  left: 0px;
+  width: 25%;
+  overflow: hidden;
+  /* basic menu styling*/
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: left;
+  /* animate slide up/down */
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+/* :target is called when its anchor id #navbar is called by clicking on the hamburger which has href="#navbar" */
+
+.navbar:target {
+  /* show navbar */
+  transform: translateY(0);
+}
+
+ul {
+  list-style: none;
+  margin-left: 25px;
+}
+
+li a {
+  display: block;
+  color: var(--link-colour-primary);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+li a:hover,
+li a:focus {
+  /* show border bottom */
+  color: var(--link-colour-hover);
+}
+
+/* ##### STARFIELD ##### */
+
+.starfield-container {
+  display: flex;
+  visibility: visible;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.box-up {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  animation: box-up ease-in infinite;
+  animation-duration: 15s;
+  scale: 0%;
+}
+
+.box-right-up {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  animation: box-right-up ease-in infinite;
+  animation-duration: 14s;
+  animation-delay: calc(var(--animation-delay) * 1);
+  scale: 0%;
+}
+
+.box-right {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  animation: box-right ease-in infinite;
+  animation-duration: 7s;
+  animation-delay: calc(var(--animation-delay) * 2);
+  scale: 0%;
+}
+
+.box-right-down {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  animation: box-right-down ease-in infinite;
+  animation-duration: 8s;
+  animation-delay: calc(var(--animation-delay) * 3);
+  scale: 0%;
+}
+
+.box-down {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  animation: box-down ease-in infinite;
+  animation-duration: 13s;
+  animation-delay: calc(var(--animation-delay) * 4);
+  scale: 0%;
+}
+
+.box-left-down {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  animation: box-left-down ease-in infinite;
+  animation-duration: 16s;
+  animation-delay: calc(var(--animation-delay) * 5);
+  scale: 0%;
+}
+
+.box-left {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  animation: box-left ease-in infinite;
+  animation-duration: 10s;
+  animation-delay: calc(var(--animation-delay) * 6);
+  scale: 0%;
+}
+
+.box-left-up {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  animation: box-left-up ease-in infinite;
+  animation-duration: 14s;
+  animation-delay: calc(var(--animation-delay) * 7);
+  scale: 0%;
+}
+
+@keyframes show-star-feild {
+  from {
+    display: none;
+  }
+  to {
+    display: inline;
+  }
+}
+
+@keyframes box-up {
+  from {
+    transform: translateX(0px) translateY(0px);
+    scale: 0%;
+  }
+  to {
+    transform: translateX(0px) translateY(-1500px);
+    scale: 100%;
+  }
+}
+
+@keyframes box-right-up {
+  from {
+    transform: translateX(0px) translateY(0px);
+    scale: 0%;
+  }
+  to {
+    transform: translateX(1500px) translateY(-1500px);
+    scale: 100%;
+  }
+}
+
+@keyframes box-right {
+  from {
+    transform: translateX(0px) translateY(0px);
+    scale: 0%;
+  }
+  to {
+    transform: translateX(1500px) translateY(0px);
+    scale: 100%;
+  }
+}
+
+@keyframes box-right-down {
+  from {
+    transform: translateX(0px) translateY(0px);
+    scale: 0%;
+  }
+  to {
+    transform: translateX(1500px) translateY(1500px);
+    scale: 100%;
+  }
+}
+
+@keyframes box-down {
+  from {
+    transform: translateX(0px) translateY(0px);
+    scale: 0%;
+  }
+  to {
+    transform: translateX(0px) translateY(1500px);
+    scale: 100%;
+  }
+}
+
+@keyframes box-left-down {
+  from {
+    transform: translateX(0px) translateY(0px);
+    scale: 0%;
+  }
+  to {
+    transform: translateX(-1500px) translateY(1500px);
+    scale: 100%;
+  }
+}
+
+@keyframes box-left {
+  from {
+    transform: translateX(0px) translateY(0px);
+    scale: 0%;
+  }
+  to {
+    transform: translateX(-1500px) translateY(0px);
+    scale: 100%;
+  }
+}
+
+@keyframes box-left-up {
+  from {
+    transform: translateX(0px) translateY(0px);
+    scale: 0%;
+  }
+  to {
+    transform: translateX(-1500px) translateY(-1500px);
+    scale: 100%;
+  }
+}
+
+/* ##### GRID ##### */
+
+.grid-container {
+  width: 80vw;
+  height: 80%;
+  display: flex;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 75px auto auto auto;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 25%;
+}
+
+@media screen and (max-width: 1500px) {
+  .card {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .card {
+    width: 50%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+.card img {
+  height: 250px;
+  display: block;
+  padding: 10%;
+  margin: auto;
+}
+
+.card h4 {
+  font-size: 1.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 0.5rem;
+}
+
+.card a {
+  color: var(--link-colour-primary);
+  text-decoration: none;
+}
+
+.card a:hover {
+  color: var(--link-colour-hover);
+  text-decoration: none;
+}
+
+/* ##### ITEM PAGE ##### */
+
+.item-container {
+  width: 80vw;
+  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 75px auto auto auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: inline;
+}
+
+.slideImage {
+  height: 500px;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+
+.prev-next-container {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  text-align: center;
+  width: 40px;
+  user-select: none;
+  -webkit-user-select: none;
+  flex-grow: 0;
+  line-height: 1rem;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  flex-grow: 100;
+  line-height: 1rem;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  color: var(--link-colour-hover);
+}
+
+.row:after {
+  content: "";
+  
+  display: table;
+  display: none;
+  clear: both;
+}
+
+/* For thumbnails and cards */
+.column {
+  display: inline-flex;
+}
+
+/* Add a transparency effect for thumnbnail images */
+.demo {
+  opacity: 0.5;
+  padding: 10%;
+  margin: 0px 25px;
+  cursor: pointer;
+  height: 200px;
+  width: 150px;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
 }
