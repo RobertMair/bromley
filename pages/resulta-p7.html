@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resulta P7 Addiator</title>
-    <link rel="stylesheet" href="../css/normalize.css" />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="https://kit.fontawesome.com/6329c14075.js" crossorigin="anonymous"></script>
 </head>
 
@@ -58,12 +58,6 @@
                 <a class="next" onclick="plusSlides(1)">
                     <h4>&#10095;</h4>
                 </a>
-            </div>
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-                <span class="xmodel">
-                    <img class="modal-content" id="img01">
-                </span>
             </div>
             <!-- Thumbnail images -->
             <div class="thumbnail-container">
@@ -199,25 +193,6 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
             captionText.innerHTML = dots[slideIndex - 1].alt;
-        }
-
-        // Get the modal
-        var modal = document.getElementById("myModal");
-
-        // Get the image and insert it inside the modal
-        var img = document.getElementById("zoom-one");
-        var modalImg = document.getElementById("img01");
-        img.onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("xmodel")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
         }
 
     </script>

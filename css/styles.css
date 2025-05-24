@@ -53,8 +53,8 @@ button {
   left: 0px;
   position: fixed;
   top: 0px;
-  z-index: 999;
   width: 100vw;
+  z-index: 999;
 }
 
 /* Hide the links inside the navigation menu (except for logo/home) */
@@ -100,10 +100,6 @@ i:hover {
   color: var(--link-colour-hover);
 }
 
-.rotated {
-  transform: rotate(90deg);
-}
-
 /* SITE/PAGE TITLE CONTAINER */
 
 .site-title {
@@ -144,8 +140,8 @@ i:hover {
 
 .home-page-footer {
   bottom: 0px;
-  position: fixed;
   padding: 40px 0 40px 0;
+  position: fixed;
   text-align: center;
   width: 100%;
 }
@@ -154,12 +150,12 @@ i:hover {
 }
 
 .page-footer {
+  background-color: white;
   bottom: 0px;
-  position: fixed;
   padding: 40px 0 40px 0;
+  position: fixed;
   text-align: center;
   width: 100%;
-  background-color: white;
 }
 
 .page-footer i {
@@ -174,27 +170,27 @@ i:hover {
 }
 
 .tooltip .tooltiptext {
-  background-color: #000;
+  background-color: black;
   border-radius: 6px;
   color: white;
+  font-size: 5rem;
   padding: 30px;
   position: absolute;
   text-align: center;
   visibility: hidden;
-  z-index: 1;
-  font-size: 5rem;
   white-space: nowrap;
+  z-index: 1;
 }
 
 .tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
+  border-color: transparent transparent black transparent;
+  border-style: solid;
+  border-width: 25px;
   bottom: 100%;
+  content: "";
   left: 15%;
   margin-left: -25px;
-  border-width: 25px;
-  border-style: solid;
-  border-color: transparent transparent black transparent;
+  position: absolute;
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
@@ -214,8 +210,8 @@ p.italic {
 
 /* Style the label to display next to the inputs */
 label {
-  padding: 12px 12px 12px 0;
   display: inline-block;
+  padding: 12px 12px 12px 0;
 }
 
 /* Style inputs, select elements and textareas */
@@ -224,40 +220,40 @@ input[type="number"],
 input[type="email"],
 select,
 textarea {
-  width: 100%;
-  padding: 12px;
   border: 1px solid var(--border-colour);
-  box-sizing: border-box;
-  resize: vertical;
   border-radius: 5px;
+  box-sizing: border-box;
   min-height: 45px;
+  padding: 12px;
+  resize: vertical;
   transition: border-color 0.25s, box-shadow 0.25s;
+  width: 100%;
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="email"]:focus {
   border-color: var(--link-colour-hover);
-  outline: 0;
   box-shadow: 0 0 4px rgb(30, 144, 255, 0.25);
+  outline: 0;
 }
 
 textarea:focus {
   border-color: var(--link-colour-hover);
-  outline: 0;
   box-shadow: 0 0 4px rgb(30, 144, 255, 0.25);
+  outline: 0;
 }
 
 /* Style the submit button */
 input[type="submit"] {
   background: var(--link-colour-primary);
-  color: white;
-  margin-top: 5px;
-  padding: 12px 20px;
   border: none;
   border-radius: 5px;
+  color: white;
   cursor: pointer;
   float: right;
+  margin-top: 5px;
+  padding: 12px 20px;
 }
 
 input[type="submit"]:hover {
@@ -267,39 +263,39 @@ input[type="submit"]:hover {
 /* Style the container */
 .form-container {
   border-top: 1px solid black;
-  padding: 20px;
   margin: 10px auto 50px auto;
-  width: 100%;
   max-width: 800px;
+  padding: 20px;
+  width: 100%;
 }
 
 /* Floating column for labels: 25% width */
 .col-25 {
   float: left;
-  width: 25%;
   margin-top: 6px;
+  width: 25%;
 }
 
 /* Floating column for inputs: 75% width */
 .col-75 {
   float: left;
-  width: 75%;
   margin-top: 6px;
+  width: 75%;
 }
 
 /* Clear floats after the columns */
 .row:after {
+  clear: both;
   content: "";
   display: table;
-  clear: both;
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .col-25,
   .col-75 {
-    width: 450px;
     margin-top: 0;
+    width: 450px;
   }
 }
 
@@ -395,15 +391,6 @@ input[type="submit"]:hover {
   position: absolute;
   scale: 0%;
   width: 100px;
-}
-
-@keyframes show-star-feild {
-  from {
-    display: none;
-  }
-  to {
-    display: inline;
-  }
 }
 
 @keyframes box-up {
@@ -628,14 +615,14 @@ input[type="submit"]:hover {
 }
 
 .item-detail-container {
-  border-top: 1px solid black;
   border-bottom: 1px solid black;
+  border-top: 1px solid black;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 5px auto 150px auto;
-  width: 60%;
   padding-bottom: 25px;
+  width: 60%;
 }
 
 .item-detail-column {
@@ -646,6 +633,25 @@ input[type="submit"]:hover {
 
 .item-detail-column a {
   text-decoration: underline;
+}
+
+.polaroid {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  float: right;
+  margin: 15px;
+}
+
+.polaroid img {
+  border-radius: 5px 5px 0 0;
+}
+
+.polaroid-container {
+  padding: 0px;
+  text-align: center;
+  text-wrap: wrap;
+  width: 250px;
 }
 
 /* IMAGE MODEL TO ZOOM / LOAD HIGHER RESOLUTION IMAGE */
@@ -661,7 +667,6 @@ input[type="submit"]:hover {
 
 /* The Modal (background) */
 .modal {
-  background-color: rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, 0.8);
   display: none;
   height: 100%;
