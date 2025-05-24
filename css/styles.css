@@ -30,6 +30,10 @@ p {
   line-height: 1.5rem;
 }
 
+.indent {
+  padding: 0 20px;
+}
+
 a {
   color: var(--link-colour-primary);
   text-decoration: none;
