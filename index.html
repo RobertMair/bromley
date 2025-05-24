@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Addiator Calculators: Home (Grid)</title>
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <script
-      src="https://kit.fontawesome.com/6329c14075.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <!-- HAMBURGER MENU -->
 
-    <div class="navbar" id="navbar">
-      <a class="close" href="#">
-        <i class="fa-solid fa-bars bigger rotated"></i>
-      </a>
-      <ul>
-        <li><a href="#"></a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Addiators</a></li>
-        <li><a href="#">Attribution</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Addiator Calculators: Home (Grid)</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://kit.fontawesome.com/6329c14075.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+
+    <!-- PAGE TITLE -->
+    <div class="site-title" id="page-title">
+      <h1>Addiator Calculators: The Allan Bromley Collection</h1>
     </div>
-    <a class="hamburger" href="#navbar">
-      <i class="fa-solid fa-bars bigger"></i>
-    </a>
 
-    <!-- STARFIELD MODE -->
+    <!-- HAMBURGER MENU -->
+    <nav>
+      <div class="topnav" id="topnav">
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a id="menu" href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa-solid fa-bars bigger"></i>
+        </a>
+        <!-- Navigation links (hidden by default) -->
+        <div id="myLinks">
+          <a href="#">Home</a>
+          <a href="pages/addiators.html">Addiators</a>
+          <a href="pages/allan-bromley.html">Allan Bromley</a>
+          <a href="pages/contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
 
+  </header>
+
+  <!-- STARFIELD MODE -->
+  <section>
     <div class="starfield-container" id="starfield-container">
       <div class="box-up tooltip">
         <a href="/pages/sumax-e.html">
@@ -41,152 +48,290 @@
         <span class="tooltiptext">Summax-E</span>
       </div>
       <div class="box-right-up tooltip">
-        <a href="index.html"
-          ><img src="/images/w-accurator-h-500.webp" alt="A W-Accurator addiator" />
+        <a href="/pages/w-accurator.html"><img src="/images/w-accurator-h-500.webp" alt="A W-Accurator addiator" />
         </a>
         <span class="tooltiptext">W Accurator</span>
       </div>
       <div class="box-right tooltip">
-        <a href="index.html">
+        <a href="/pages/duplex.html">
           <img src="/images/duplex-h-500.webp" alt="A Duplex addiator" />
         </a>
         <span class="tooltiptext">Duplex</span>
       </div>
       <div class="box-right-down tooltip">
-        <a href="index.html"
-          ><img src="/images/magic-brain-gold-h-500.webp" alt="A gold Magic Brain addiator" />
+        <a href="/pages/magic-brain-gold.html"><img src="/images/magic-brain-gold-h-500.webp"
+            alt="A gold Magic Brain addiator" />
         </a>
         <span class="tooltiptext">Magic Brain 'Gold'</span>
       </div>
       <div class="box-down tooltip">
-        <a href="index.html">
+        <a href="/pages/resulta-p7.html">
           <img src="/images/resulta-p7-h-500.webp" alt="A Resulta P7 addiator" />
         </a>
         <span class="tooltiptext">Resulta P7</span>
       </div>
       <div class="box-left-down tooltip">
-        <a href="index.html">
+        <a href="/pages/magic-brain-red.html">
           <img src="/images/magic-brain-red-h-500.webp" alt="A red Magic Brain addiator" />
         </a>
         <span class="tooltiptext">Magic Brain 'Red'</span>
       </div>
       <div class="box-left tooltip">
-        <a href="index.html">
+        <a href="/pages/correntator.html">
           <img src="/images/correntator-h-500.webp" alt="A Correntator addiator" />
         </a>
         <span class="tooltiptext">Correntator</span>
       </div>
       <div class="box-left-up tooltip">
-        <a href="index.html">
+        <a href="/pages/sumax.html">
           <img src="/images/summax-h-500.webp" alt="A Summax addiator" />
         </a>
         <span class="tooltiptext">Summax</span>
       </div>
     </div>
+  </section>
 
-    <!-- GRID MODE -->
-
+  <!-- GRID MODE -->
+  <section>
     <div class="grid-container" id="grid-container">
       <div class="card">
         <a href="/pages/sumax-e.html">
-          <img src="/images/sumax-e-addition-h-500.webp" alt="A Summax-E addiator" />        
-        <div class="container">
-    <h4>Sumax-E</h4>
-    <p>Maker: Addumult</p>
-    <p>Origin: Germany, c. 1960</p></a>
-  </div>
+          <img src="/images/sumax-e-addition-h-500.webp" alt="A Summax-E addiator" />
+          <div class="container">
+            <h4>Sumax-E</h4>
+            <table>
+              <tr>
+                <td>Maker:</td>
+                <td>Addumult</td>
+              </tr>
+              <tr>
+                <td>Origin:</td>
+                <td>Germany, c. 1960</td>
+              </tr>
+            </table>
+          </div>
+        </a>
       </div>
       <div class="card">
-        <a href="index.html"
-          ><img src="/images/w-accurator-h-500.webp" alt="A W-Accurator addiator" />        
-        <div class="container">
-    <h4>W Accurator</h4>
-    <p>Maker: Unknown</p>
-    <p>Origin: Hong Kong c.1960-1970</p></a>
-  </div>
+        <a href="/pages/w-accurator.html">
+          <div class="container">
+            <img src="/images/w-accurator-h-500.webp" alt="A W-Accurator addiator" />
+            <h4>W Accurator</h4>
+            <table>
+              <tr>
+                <td>Maker:</td>
+                <td>Unknown</td>
+              </tr>
+              <tr>
+                <td>Origin:</td>
+                <td>Hong Kong, c.1960-1970</td>
+              </tr>
+            </table>
+          </div>
+        </a>
       </div>
       <div class="card">
-        <a href="index.html">
-          <img src="/images/duplex-h-500.webp" alt="A Duplex addiator" />        
-        <div class="container">
-    <h4><b>Duplex</b></h4>
-     <p>Maker: Addiator Gesellschaft</p>
-    <p>Origin: Germany, c.1950-1970</p></a>
-  </div>
+        <a href="/pages/duplex.html">
+          <img src="/images/duplex-h-500.webp" alt="A Duplex addiator" />
+          <div class="container">
+            <h4>Duplex</h4>
+            <table>
+              <tr>
+                <td>Maker:</td>
+                <td>Addiator Gesellschaft</td>
+              </tr>
+              <tr>
+                <td>Origin:</td>
+                <td>Germany, c.1950-1970</td>
+              </tr>
+            </table>
+          </div>
+        </a>
       </div>
       <div class="card">
-        <a href="index.html"
-          ><img src="/images/magic-brain-gold-h-500.webp" alt="A gold Magic Brain addiator" />        
-        <div class="container">
-    <h4><b>Magic Brain</b></h4>
-      <p>Maker: Unkown</p>
-    <p>Origin: Hong Kong, c.1950-1960</p></a>
-  </div>
+        <a href="/pages/magic-brain-gold.html">
+          <img src="/images/magic-brain-gold-h-500.webp" alt="A gold Magic Brain addiator" />
+          <div class="container">
+            <h4>Magic Brain 'Gold'</h4>
+            <table>
+              <tr>
+                <td>Maker:</td>
+                <td>Unkown</td>
+              </tr>
+              <tr>
+                <td>Origin:</td>
+                <td>Hong Kong / Japan, c.1950-1960</td>
+              </tr>
+            </table>
+          </div>
+        </a>
       </div>
       <div class="card">
-        <a href="index.html">
-          <img src="/images/resulta-p7-h-500.webp" alt="A Resulta P7 addiator" />       
-        <div class="container">
-    <h4><b>Resulta P7</b></h4>
-         <p>Maker: Paul Bruening</p>
-    <p>Origin: West Germany, 1967</p></a>
-  </div>
+        <a href="/pages/resulta-p7.html">
+          <img src="/images/resulta-p7-h-500.webp" alt="A Resulta P7 addiator" />
+          <div class="container">
+            <h4>Resulta P7</h4>
+            <table>
+              <tr>
+                <td>Maker:</td>
+                <td>Paul Bruening</td>
+              </tr>
+              <tr>
+                <td>Origin:</td>
+                <td>West Germany, 1967</td>
+              </tr>
+            </table>
+          </div>
+        </a>
       </div>
       <div class="card">
-        <a href="index.html">
-          <img src="/images/magic-brain-red-h-500.webp" alt="A red Magic Brain addiator" />        
-        <div class="container">
-    <h4><b>Magic Brain</b></h4>
-      <p>Maker: Unkown</p>
-    <p>Origin: Hong Kong, c.1950-1960</p></a>
-  </div>
+        <a href="/pages/magic-brain-red.html">
+          <img src="/images/magic-brain-red-h-500.webp" alt="A red Magic Brain addiator" />
+          <div class="container">
+            <h4>Magic Brain 'Red'</h4>
+            <table>
+              <tr>
+                <td>Maker:</td>
+                <td>Unkown</td>
+              </tr>
+              <tr>
+                <td>Origin:</td>
+                <td>Hong Kong / Japan, c.1950-1960</td>
+              </tr>
+            </table>
+          </div>
+        </a>
       </div>
       <div class="card">
-        <a href="index.html">
-          <img src="/images/correntator-h-500.webp" alt="A Correntator addiator" />        
-        <div class="container">
-    <h4><b>Correntator</b></h4>
-         <p>Maker: Continentale Buroreform (CBR)</p>
-    <p>Origin: Germany, c.1920-1930</p></a>
-  </div>
+        <a href="/pages/correntator.html">
+          <img src="/images/correntator-h-500.webp" alt="A Correntator addiator" />
+          <div class="container">
+            <h4>Correntator</h4>
+            <table>
+              <tr>
+                <td>Maker:</td>
+                <td>Continentale Buroreform (CBR)</td>
+              </tr>
+              <tr>
+                <td>Origin:</td>
+                <td>Germany, c.1920-1930</td>
+              </tr>
+            </table>
+          </div>
+        </a>
       </div>
       <div class="card">
-        <a href="index.html">
-          <img src="/images/summax-h-500.webp" alt="A Summax addiator" />        
-        <div class="container">
-    <h4><b>Summax</b></h4>
-      <p>Maker: Addi GmbH, Klee & Behrens</p>
-    <p>Origin: Germany, 1920</p></a>
-  </div>
+        <a href="/pages/sumax.html">
+          <img src="/images/summax-h-500.webp" alt="A Summax addiator" />
+          <div class="container">
+            <h4>Summax</h4>
+            <table>
+              <tr>
+                <td>Maker:</td>
+                <td>Addi GmbH, Klee & Behrens</td>
+              </tr>
+              <tr>
+                <td>Origin:</td>
+                <td> Germany, 1920</td>
+              </tr>
+            </table>
+          </div>
+        </a>
       </div>
     </div>
+  </section>
 
-    <!-- FOOTER: GRID, STARFEILD SELECTOR -->
+  <!-- FOOTER: GRID, STARFIELD SELECTOR -->
+  <footer>
+    <div class="home-page-footer" id="home-page-footer">
+      <button onclick="hideGrid()">
+        <i class="fa-solid fa-star-of-life bigger"></i>
+      </button>
+      <button onclick="showGrid()">
+        <i class="fa-solid fa-border-all bigger"></i>
+      </button>
+    </div>
+  </footer>
 
-    <footer>
-      <div id="home-page-footer">
-        <button onclick="hideGrid()">
-          <i class="fa-solid fa-star-of-life bigger"></i>
-        </button>
-        <button onclick="showGrid()">
-          <i class="fa-solid fa-border-all bigger"></i>
-        </button>
-      </div>
-    </footer>
+  <!-- JAVASCRIPT FUNCTIONS -->
+  <script>
 
-    <script>
-      function showGrid() {
-        var y = document.getElementById("starfield-container");
-        y.style.visibility = "hidden";
-        var x = document.getElementById("grid-container");
-        x.style.display = "flex";
-      }
-      function hideGrid() {
-        var x = document.getElementById("grid-container");
+    /* Closes hamburger menu if user clicks anywhere else on screen. */
+    document.addEventListener('click', function (event) {
+      const element = document.getElementById('menu');
+      if (!element.contains(event.target)) {
+        var x = document.getElementById("myLinks");
+        var y = document.getElementById("topnav");
         x.style.display = "none";
-        var y = document.getElementById("starfield-container");
-        y.style.visibility = "visible";
+        y.style.backgroundColor = "rgb(255, 255, 255, 0.0)";
       }
-    </script>
-  </body>
+    });
+
+    /* Closes hamburger menu if user scrolls the screen. */
+    document.addEventListener('scroll', function (event) {
+      const element = document.getElementById('menu');
+      if (!element.contains(event.target)) {
+        var x = document.getElementById("myLinks");
+        var y = document.getElementById("topnav");
+        x.style.display = "none";
+        y.style.backgroundColor = "rgb(255, 255, 255, 0.0)";
+      }
+    });
+
+    /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      var y = document.getElementById("topnav");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+        y.style.backgroundColor = "rgb(255, 255, 255, 0.0)";
+      } else {
+        x.style.display = "block";
+        y.style.backgroundColor = "rgb(255, 255, 255, 0.85)";
+      }
+    }
+
+    // Swap display of 'Starfield' and 'Grid' layouts on home page.
+    function showGrid() {
+      var w = document.getElementById("page-title");
+      w.style.display = "none";
+      var x = document.getElementById("starfield-container");
+      x.style.visibility = "hidden";
+      var y = document.getElementById("grid-container");
+      y.style.display = "flex";
+      var z = document.getElementById("home-page-footer");
+      z.style.backgroundColor = "white";
+    }
+    function hideGrid() {
+      var v = document.getElementById("myLinks");
+      v.style.display = "none";
+      var w = document.getElementById("page-title");
+      w.style.display = "inline-block";
+      var x = document.getElementById("starfield-container");
+      x.style.visibility = "visible";
+      var y = document.getElementById("grid-container");
+      y.style.display = "none";
+      var z = document.getElementById("home-page-footer");
+      z.style.backgroundColor = "";
+    }
+
+    // Display 'grid' if home page accessed from a sub-page 'grid' link.
+    const showGridFromSubpage = () => {
+      const { hash } = window.location;
+      if (hash === '#grid-container') {
+        history.pushState("", document.title, window.location.pathname
+          + window.location.search);
+        var w = document.getElementById("page-title");
+        w.style.display = "none";
+        var x = document.getElementById("starfield-container");
+        x.style.visibility = "hidden";
+        var y = document.getElementById("grid-container");
+        y.style.display = "flex";
+      }
+    }
+    showGridFromSubpage();
+  </script>
+
+</body>
+
 </html>

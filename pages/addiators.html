@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Addiators</title>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="https://kit.fontawesome.com/6329c14075.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+
+        <!-- PAGE TITLE -->
+        <div class="page-title">
+            <h1>Addiators</h1>
+        </div>
+        <!-- HAMBURGER MENU -->
+        <nav>
+            <div class="topnav" id="topnav">
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <a id="menu" href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa-solid fa-bars bigger"></i>
+                </a>
+                <!-- Navigation links (hidden by default) -->
+                <div id="myLinks">
+                    <a href="../index.html">Home</a>
+                    <a href="addiators.html">Addiators</a>
+                    <a href="allan-bromley.html">Allan Bromley</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <section class="form-section">
+        <div class="form-container">
+            <form action="https://formspree.io/f/myzwovpb" method="POST">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="name">Name*</label>
+                    </div>
+                    <div class="col-75">
+                        <input required type="text" id="name" name="name" placeholder="Your name..">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="phone">Phone</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" id="phone" name="phone" placeholder="Your phone number..">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="email">Email*</label>
+                    </div>
+                    <div class="col-75">
+                        <input required type="email" id="email" name="email" placeholder="Your email..">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="enquiry">Enquiry*</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea required id="enquiry" name="enquiry" placeholder="Your enquiry.."
+                            style="height:200px"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <p class="italic">*Required fields.</p>
+                    </div>
+                    <div class="col-75"></div>
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER: GRID, STARFIELD SELECTOR -->
+    <footer>
+        <div class="page-footer">
+            <button onclick="document.location='../index.html'">
+                <i class="fa-solid fa-star-of-life bigger"></i>
+            </button>
+            <button onclick="document.location='../index.html#grid-container'">
+                <i class="fa-solid fa-border-all bigger"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FUNCTIONS -->
+    <script>
+
+        /* Clears form upon submission. */
+        window.onbeforeunload = () => {
+            for (const form of document.getElementsByTagName('form')) {
+                form.reset();
+            }
+        }
+
+        /* Closes hamburger menu if user clicks anywhere else on screen. */
+        document.addEventListener('click', function (event) {
+            const element = document.getElementById('menu');
+            if (!element.contains(event.target)) {
+                var x = document.getElementById("myLinks");
+                var y = document.getElementById("topnav");
+                x.style.display = "none";
+                y.style.backgroundColor = "rgb(255, 255, 255, 0.0)";
+            }
+        });
+
+        /* Closes hamburger menu if user scrolls the screen. */
+        document.addEventListener('scroll', function (event) {
+            const element = document.getElementById('menu');
+            if (!element.contains(event.target)) {
+                var x = document.getElementById("myLinks");
+                var y = document.getElementById("topnav");
+                x.style.display = "none";
+                y.style.backgroundColor = "rgb(255, 255, 255, 0.0)";
+            }
+        });
+
+        /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            var y = document.getElementById("topnav");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+                y.style.backgroundColor = "rgb(255, 255, 255, 0.0)";
+            } else {
+                x.style.display = "block";
+                y.style.backgroundColor = "rgb(255, 255, 255, 0.85)";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

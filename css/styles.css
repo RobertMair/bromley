@@ -3,27 +3,97 @@
 :root {
   --link-colour-primary: #000;
   --link-colour-hover: #1e90ff;
+  --border-colour: #d3d3d3;
   --animation-delay: 3s;
-}
-
-html {
-  /* 62.5% of 16 px = 10 px 
-  font-size: 62.5%; */
 }
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  /* 1 rem = 1 x font size of root element (html is the root element) */
+}
+
+h1 {
   font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+a {
+  color: var(--link-colour-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-colour-hover);
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* HAMBURGER MENU */
+
+/* Style the navigation menu */
+.topnav {
+  left: 0px;
+  position: fixed;
+  top: 0px;
+  z-index: 999;
+  width: 100vw;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+  width: 100vw;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: var(--link-colour-primary);
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 25px;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  color: var(--link-colour-hover);
+}
+
+/* TABLES */
+
+th,
+td {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-right: 25px;
+  text-align: left;
+  vertical-align: top;
 }
 
 /* ICON CSS */
 
 i {
-  font-size: 3rem;
-  padding: 0px 25px;
   color: var(--link-colour-primary);
+  font-size: 3rem;
 }
 
 i:hover {
@@ -34,199 +104,297 @@ i:hover {
   transform: rotate(90deg);
 }
 
-/* HOME PAGE FOOTER */
+/* SITE/PAGE TITLE CONTAINER */
 
-#home-page-footer {
+.site-title {
   position: fixed;
-  bottom: 5%;
-  width: 100%;
-  padding: 20px;
-  margin: auto;
   text-align: center;
+  width: 100%;
+  z-index: 999;
 }
 
-#home-page-footer button {
-  border: none;
-  background: none;
+.page-title {
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+}
+
+@media screen and (max-width: 1300px) {
+  .site-title h1 {
+    font-size: 1.5rem;
+    margin: auto;
+    padding: 20px;
+    width: 50%;
+  }
+  .page-title h1 {
+    font-size: 1.5rem;
+    margin: auto;
+    padding: 20px;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .page-title h1 {
+    display: none;
+  }
+}
+
+/* FOOTERS */
+
+.home-page-footer {
+  bottom: 0px;
+  position: fixed;
+  padding: 40px 0 40px 0;
+  text-align: center;
+  width: 100%;
+}
+.home-page-footer i {
+  padding: 0px 25px;
+}
+
+.page-footer {
+  bottom: 0px;
+  position: fixed;
+  padding: 40px 0 40px 0;
+  text-align: center;
+  width: 100%;
+  background-color: white;
+}
+
+.page-footer i {
+  padding: 0px 25px;
 }
 
 /* TOOLTIPS */
 
 .tooltip {
-  position: relative;
   display: inline-block;
+  position: relative;
 }
 
 .tooltip .tooltiptext {
-  visibility: hidden;
-  background-color: black;
-  color: #fff;
-  text-align: center;
+  background-color: #000;
   border-radius: 6px;
-  padding: 5px;
-
-  /* Position the tooltip */
+  color: white;
+  padding: 30px;
   position: absolute;
+  text-align: center;
+  visibility: hidden;
   z-index: 1;
+  font-size: 5rem;
+  white-space: nowrap;
 }
 
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 15%;
+  margin-left: -25px;
+  border-width: 25px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
 
-/* HAMBURGER MENU */
+/* FORMS */
 
-.hamburger,
-.close {
-  z-index: 999;
-  cursor: pointer;
-  /* position absolute position the icons relative to the body because they have no position relative parents*/
-  position: fixed;
-  top: 20px;
-  left: 20px;
-}
-
-.close {
-  background: white;
-}
-
-.navbar {
-  position: fixed;
-  /* a higher z-index put navbar above hamburger */
-  z-index: 1000;
-  top: 0px;
-  left: 0px;
-  width: 25%;
-  overflow: hidden;
-  /* basic menu styling*/
+.form-section {
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-evenly;
-  align-items: left;
-  /* animate slide up/down */
-  transform: translateY(-100%);
-  transition: transform 0.4s ease;
+  margin: 150px auto 150px auto;
+  width: 100%;
 }
 
-/* :target is called when its anchor id #navbar is called by clicking on the hamburger which has href="#navbar" */
-
-.navbar:target {
-  /* show navbar */
-  transform: translateY(0);
+p.italic {
+  font-style: italic;
 }
 
-ul {
-  list-style: none;
-  margin-left: 25px;
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
 }
 
-li a {
-  display: block;
-  color: var(--link-colour-primary);
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-decoration: none;
-  padding: 1rem;
+/* Style inputs, select elements and textareas */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-colour);
+  box-sizing: border-box;
+  resize: vertical;
+  border-radius: 5px;
+  min-height: 45px;
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 
-li a:hover,
-li a:focus {
-  /* show border bottom */
-  color: var(--link-colour-hover);
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus {
+  border-color: var(--link-colour-hover);
+  outline: 0;
+  box-shadow: 0 0 4px rgb(30, 144, 255, 0.25);
 }
 
-/* ##### STARFIELD ##### */
+textarea:focus {
+  border-color: var(--link-colour-hover);
+  outline: 0;
+  box-shadow: 0 0 4px rgb(30, 144, 255, 0.25);
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  background: var(--link-colour-primary);
+  color: white;
+  margin-top: 5px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type="submit"]:hover {
+  background: var(--link-colour-hover);
+}
+
+/* Style the container */
+.form-container {
+  border-top: 1px solid black;
+  padding: 20px;
+  margin: 10px auto 50px auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75 {
+    width: 450px;
+    margin-top: 0;
+  }
+}
+
+/* STARFIELD */
 
 .starfield-container {
-  display: flex;
-  visibility: visible;
-  justify-content: center;
   align-items: center;
-  width: 100vw;
+  display: flex;
   height: 100%;
-  top: 0px;
+  justify-content: center;
   left: 0px;
-  position: absolute;
   overflow: hidden;
+  position: absolute;
+  top: 0px;
+  visibility: visible;
+  width: 100vw;
 }
 
 .box-up {
-  position: absolute;
-  width: 100px;
-  height: 100px;
   animation: box-up ease-in infinite;
   animation-duration: 15s;
+  height: 100px;
+  position: absolute;
   scale: 0%;
+  width: 100px;
 }
 
 .box-right-up {
-  position: absolute;
-  width: 100px;
-  height: 100px;
   animation: box-right-up ease-in infinite;
-  animation-duration: 14s;
   animation-delay: calc(var(--animation-delay) * 1);
+  animation-duration: 14s;
+  height: 100px;
+  position: absolute;
   scale: 0%;
+  width: 100px;
 }
 
 .box-right {
-  position: absolute;
-  width: 100px;
-  height: 100px;
   animation: box-right ease-in infinite;
-  animation-duration: 7s;
   animation-delay: calc(var(--animation-delay) * 2);
+  animation-duration: 7s;
+  height: 100px;
+  position: absolute;
   scale: 0%;
+  width: 100px;
 }
 
 .box-right-down {
-  position: absolute;
-  width: 100px;
-  height: 100px;
   animation: box-right-down ease-in infinite;
-  animation-duration: 8s;
   animation-delay: calc(var(--animation-delay) * 3);
+  animation-duration: 8s;
+  height: 100px;
+  position: absolute;
   scale: 0%;
+  width: 100px;
 }
 
 .box-down {
-  position: absolute;
-  width: 100px;
-  height: 100px;
   animation: box-down ease-in infinite;
-  animation-duration: 13s;
   animation-delay: calc(var(--animation-delay) * 4);
+  animation-duration: 13s;
+  height: 100px;
+  position: absolute;
   scale: 0%;
+  width: 100px;
 }
 
 .box-left-down {
-  position: absolute;
-  width: 100px;
-  height: 100px;
   animation: box-left-down ease-in infinite;
-  animation-duration: 16s;
   animation-delay: calc(var(--animation-delay) * 5);
+  animation-duration: 16s;
+  height: 100px;
+  position: absolute;
   scale: 0%;
+  width: 100px;
 }
 
 .box-left {
-  position: absolute;
-  width: 100px;
-  height: 100px;
   animation: box-left ease-in infinite;
-  animation-duration: 10s;
   animation-delay: calc(var(--animation-delay) * 6);
+  animation-duration: 10s;
+  height: 100px;
+  position: absolute;
   scale: 0%;
+  width: 100px;
 }
 
 .box-left-up {
-  position: absolute;
-  width: 100px;
-  height: 100px;
   animation: box-left-up ease-in infinite;
-  animation-duration: 14s;
   animation-delay: calc(var(--animation-delay) * 7);
+  animation-duration: 14s;
+  height: 100px;
+  position: absolute;
   scale: 0%;
+  width: 100px;
 }
 
 @keyframes show-star-feild {
@@ -240,107 +408,109 @@ li a:focus {
 
 @keyframes box-up {
   from {
-    transform: translateX(0px) translateY(0px);
     scale: 0%;
+    transform: translateX(0px) translateY(0px);
   }
   to {
-    transform: translateX(0px) translateY(-1500px);
     scale: 100%;
+    transform: translateX(0px) translateY(-1500px);
   }
 }
 
 @keyframes box-right-up {
   from {
-    transform: translateX(0px) translateY(0px);
     scale: 0%;
+    transform: translateX(0px) translateY(0px);
   }
   to {
-    transform: translateX(1500px) translateY(-1500px);
     scale: 100%;
+    transform: translateX(1500px) translateY(-1500px);
   }
 }
 
 @keyframes box-right {
   from {
-    transform: translateX(0px) translateY(0px);
     scale: 0%;
+    transform: translateX(0px) translateY(0px);
   }
   to {
-    transform: translateX(1500px) translateY(0px);
     scale: 100%;
+    transform: translateX(1500px) translateY(0px);
   }
 }
 
 @keyframes box-right-down {
   from {
-    transform: translateX(0px) translateY(0px);
     scale: 0%;
+    transform: translateX(0px) translateY(0px);
   }
   to {
-    transform: translateX(1500px) translateY(1500px);
     scale: 100%;
+    transform: translateX(1500px) translateY(1500px);
   }
 }
 
 @keyframes box-down {
   from {
-    transform: translateX(0px) translateY(0px);
     scale: 0%;
+    transform: translateX(0px) translateY(0px);
   }
   to {
-    transform: translateX(0px) translateY(1500px);
     scale: 100%;
+    transform: translateX(0px) translateY(1500px);
   }
 }
 
 @keyframes box-left-down {
   from {
-    transform: translateX(0px) translateY(0px);
     scale: 0%;
+    transform: translateX(0px) translateY(0px);
   }
   to {
-    transform: translateX(-1500px) translateY(1500px);
     scale: 100%;
+    transform: translateX(-1500px) translateY(1500px);
   }
 }
 
 @keyframes box-left {
   from {
-    transform: translateX(0px) translateY(0px);
     scale: 0%;
+    transform: translateX(0px) translateY(0px);
   }
   to {
-    transform: translateX(-1500px) translateY(0px);
     scale: 100%;
+    transform: translateX(-1500px) translateY(0px);
   }
 }
 
 @keyframes box-left-up {
   from {
-    transform: translateX(0px) translateY(0px);
     scale: 0%;
+    transform: translateX(0px) translateY(0px);
   }
   to {
-    transform: translateX(-1500px) translateY(-1500px);
     scale: 100%;
+    transform: translateX(-1500px) translateY(-1500px);
   }
 }
 
-/* ##### GRID ##### */
+/* GRID  */
 
 .grid-container {
-  width: 80vw;
-  height: 80%;
   display: flex;
   display: none;
   flex-wrap: wrap;
+  height: 80%;
   justify-content: space-evenly;
-  margin: 75px auto auto auto;
+  margin: 75px auto 150px auto;
+  width: 80vw;
 }
 
 .card {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  padding-bottom: 25px;
   transition: 0.3s;
   width: 25%;
 }
@@ -357,7 +527,6 @@ li a:focus {
   }
 }
 
-/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .card {
     width: 100%;
@@ -371,44 +540,25 @@ li a:focus {
 
 /* Add some padding inside the card container */
 .container {
-  padding: 2px 16px;
+  padding: 2px 16px 0px 30px;
 }
 
 .card img {
-  height: 250px;
   display: block;
-  padding: 10%;
+  height: 250px;
   margin: auto;
+  padding: 10% 0 5% 0;
 }
 
-.card h4 {
-  font-size: 1.5rem;
-}
-
-.card p {
-  font-size: 1rem;
-  line-height: 0.5rem;
-}
-
-.card a {
-  color: var(--link-colour-primary);
-  text-decoration: none;
-}
-
-.card a:hover {
-  color: var(--link-colour-hover);
-  text-decoration: none;
-}
-
-/* ##### ITEM PAGE ##### */
+/* ITEM PAGE */
 
 .item-container {
-  width: 80vw;
-  height: 80%;
   display: flex;
   flex-wrap: wrap;
+  height: 80%;
   justify-content: space-evenly;
   margin: 75px auto auto auto;
+  width: 60%;
 }
 
 /* Hide the images by default */
@@ -422,61 +572,167 @@ li a:focus {
 }
 
 /* Next & previous buttons */
-
 .prev-next-container {
-  display: flex;
   align-items: stretch;
+  display: flex;
   width: 100%;
 }
 
 .prev,
 .next {
-  cursor: pointer;
-  text-align: center;
-  width: 40px;
-  user-select: none;
   -webkit-user-select: none;
+  cursor: pointer;
   flex-grow: 0;
   line-height: 1rem;
+  text-align: center;
+  user-select: none;
+  width: 40px;
 }
 
 /* Container for image text */
 .caption-container {
-  text-align: center;
   flex-grow: 100;
   line-height: 1rem;
+  text-align: center;
 }
 
-/* On hover, add a black background color with a little bit see-through */
+/* On hover, add a hover color */
 .prev:hover,
 .next:hover {
   color: var(--link-colour-hover);
 }
 
-.row:after {
-  content: "";
-  
-  display: table;
-  display: none;
-  clear: both;
+.thumbnail-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 25px;
 }
 
 /* For thumbnails and cards */
-.column {
-  display: inline-flex;
+.thumbnail-column {
+  justify-content: center;
 }
 
-/* Add a transparency effect for thumnbnail images */
-.demo {
+/* Add a transparency effect for thumbnail images */
+.thumbnails {
+  cursor: pointer;
+  height: 150px;
+  margin: 0px 25px;
   opacity: 0.5;
   padding: 10%;
-  margin: 0px 25px;
-  cursor: pointer;
-  height: 200px;
-  width: 150px;
 }
 
 .active,
-.demo:hover {
+.thumbnails:hover {
   opacity: 1;
+}
+
+.item-detail-container {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 5px auto 150px auto;
+  width: 60%;
+  padding-bottom: 25px;
+}
+
+.item-detail-column {
+  min-width: 200px;
+  padding: 0 5%;
+  width: 40%;
+}
+
+.item-detail-column a {
+  text-decoration: underline;
+}
+
+/* IMAGE MODEL TO ZOOM / LOAD HIGHER RESOLUTION IMAGE */
+.modelImage {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modelImage:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  padding-top: 75px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000; /* Hidden by default */ /* Stay in place */ /* Sit on top */ /* Location of the box */ /* Full width */ /* Full height */ /* Enable scroll if needed */ /* Fallback color */ /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  display: block;
+  height: 90vh;
+  margin: auto;
+  max-width: 700px;
+}
+
+/* Add Animation */
+.modal-content {
+  -webkit-animation-duration: 0.6s;
+  -webkit-animation-name: zoom;
+  animation-duration: 0.6s;
+  animation-name: zoom;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.xmodel:hover,
+.xmodel:focus {
+  cursor: pointer;
+}
+
+/* Hide thumbnail images on small screens */
+
+@media screen and (max-width: 1300px) {
+  .thumbnails {
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .thumbnail-container {
+    display: none;
+  }
+  .item-detail-column {
+    width: 100%;
+  }
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
 }
